@@ -1,0 +1,199 @@
+.chatbox-main {
+    display: flex;
+    gap: 60px;
+    margin: 0 20px; /* Removed top and bottom margin to eliminate extra height */
+    padding: 40px 0; /* Added padding for the top and bottom */
+    color: white;
+    font-family: poppins, sans-serif;
+    height: calc(100vh - 65px); /* Full height minus padding */
+
+    .mychats-main {
+        background-color: rgb(36, 70, 114);
+        color: white;
+        width: 350px;
+        border-radius: 5px;
+        @include flex-d-column-style;
+        gap:40px;
+        
+        .header {
+            @include justify-between-align-center-style;
+            padding: 15px;
+            .title {
+                font-size: 20px;
+                font-weight: 600;
+            }
+            .group-button {
+                background-color: black;
+                color: white;
+                text-transform: none;
+            }
+        }
+        .all-chats{
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            height: 100vh;
+            overflow-y: auto;
+            padding: 15px 15px;
+            .chat-box{
+                @include flex-d-column-style;
+                background-color: rgb(245, 223, 223);
+                color: rgba(22, 21, 21, 0.76);;
+                padding: 10px;
+                border-radius: 5px;
+                cursor: pointer;
+                gap: 5px;
+                &:hover{
+                    background-color: rgb(136, 80, 239);
+                    color: white;
+                }
+                .name{
+                    font-size: 16px;
+                    font-weight: 500;
+                }
+                .message{
+                    font-size: 12px;
+                    
+                }
+            }
+        }
+    }
+
+    .main-chatbox {
+        background-color: rgb(36, 70, 114);
+        color: white;
+        width: 100%;
+        border-radius: 5px;
+        @include flex-d-column-style;
+        justify-content: space-between;
+        
+        .header {
+            background-color: rgb(20, 114, 168);
+            border-radius: 5px 5px 0px 0px;
+            @include justify-between-align-center-style;
+            padding: 15px;
+            .back-button{
+                display: none; /* Hidden by default */
+            }
+            .title {
+                font-size: 25px;
+                font-weight: 400;
+            }
+            .eye-button {
+                color: white;
+            }
+        }
+        .spinner-main{
+           @include justify-content-center;
+        }
+        .chat-content{
+            height: 100vh;
+            overflow-y: auto;  
+        }
+        .chat-textbox{
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            gap:10px;
+            .search-main{
+                padding: 10px 15px;
+                border-radius: 25px;
+                .text-box{
+                    background-color: white;
+                }
+            }
+            
+        }
+        .message{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            font-size: 25px;
+        }
+    }
+
+    // Media Queries
+
+    @media only screen and (min-width: 320px) and (max-width: 480px) {
+        height: calc(100vh - 60px); /* Full height minus padding */
+        .mychats-main {
+          width: 100%;
+          display: block;
+          display: flex;
+        }
+        .mychats-main.hide {
+            display: none;
+          }
+      
+        .main-chatbox.hide {
+          width: 100%;
+          display: none; /* Initially hide the main chatbox */
+        }
+      
+        .main-chatbox.show {
+          display: block; /* Show the chatbox when a user is selected */
+          width:100%;
+          display: flex;
+            .header{
+                .back-button {
+                    display: inline-flex; /* Show back button on small screens */
+                    margin-right: 10px;
+                    color: white;
+                  }
+                  .title{
+                    font-size: 20px;
+                  }
+            }
+        }
+        
+    }
+      
+  
+    @media only screen and (min-width: 481px) and (max-width: 767px) {
+        /* CSS for regular mobile phones in portrait mode */
+        height: calc(100vh - 60px); /* Full height minus padding */
+        .mychats-main {
+            width: 100%;
+            display: block;
+            display: flex;
+          }
+          .mychats-main.hide {
+              display: none;
+            }
+        
+          .main-chatbox.hide {
+            width: 100%;
+            display: none; /* Initially hide the main chatbox */
+          }
+        
+          .main-chatbox.show {
+            display: block; /* Show the chatbox when a user is selected */
+            width:100%;
+            display: flex;
+              .header{
+                  .back-button {
+                      display: inline-flex; /* Show back button on small screens */
+                      margin-right: 10px;
+                      color: white;
+                    }
+                    .title{
+                      font-size: 20px;
+                    }
+              }
+          }
+    }
+
+    @media only screen and (min-width: 768px) and (max-width: 1024px) {
+         /* CSS for iPads or tablets */
+        gap: 20px;
+        .mychats-main {
+            width: 400px;
+          }
+       
+    }
+
+    @media only screen and (min-width: 1025px) and (max-width: 1280px) {
+        /* CSS for laptops and small desktops */
+    }
+}

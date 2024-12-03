@@ -1,0 +1,122 @@
+.edit-profile-main {
+    @include main-card;
+    .header-container{
+        @include justify-between-align-center-style;
+       padding:15px;
+       .title{
+        font-size: 20px;
+       }
+       .close-icon{
+        @include close-icon;
+    }
+    }
+    .textfields-main{
+        @include flex-d-column-style;
+        padding: 5px 15px;
+        gap: 10px;
+        .update-username{
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            .field{
+                @include text-input-style;
+            }
+            .validation-border {
+                @include text-input-style;
+                @include text-input-error-style;
+            }
+            .secondary-action-button{
+               color: white;
+               text-transform: none;
+               width: 40px;
+               align-self: center;
+                &.update{
+                    background-color: teal;
+                }
+                &.add{
+                    background-color: rgb(31, 173, 31);
+                }
+            }
+        }
+        
+    }
+    .tooltip-main{
+       @include tooltip-card;
+       padding: 10px 15px;
+    }
+    .profile-main{
+        @include flex-d-column-style;
+        padding: 5px 15px;
+        overflow-y: auto;
+        gap:10px;
+        .profile{
+          @include profile-card;
+            .user-photo{
+              @include profile-photo;
+            }
+            .details{
+                @include flex-d-column-style;
+                gap:5px;
+                .title{
+                    font-weight: 600;
+                    font-size: 18px;
+                }
+                .message{
+                    font-size: 14px;
+                    font-weight: 400;
+                }
+            }
+        }
+
+    }
+    .group-action-button{
+        background-color: red;
+        color: white;
+        margin: 15px;
+        cursor: pointer;
+        &:hover{
+            background-color: red;
+        }
+    }
+    
+}
+
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+    .edit-profile-main{
+        max-width: 270px;
+        max-height: 500px;
+        .header-container{
+            .title{
+             font-size: 18px;
+            }
+            .close-icon{
+             width: 25px;
+         }
+         }
+         .tooltip-main{
+            max-width: 300px;
+            gap: 5px;
+         }
+         .profile-main{
+            // min-height: 100px;
+            .profile{
+                .user-photo{
+                  width: 40px;
+                  height: 40px;
+                }
+                .details{
+                    @include flex-d-column-style;
+                    gap:5px;
+                    .title{
+                        font-size: 16px;
+                    }
+                    .message{
+                        font-size: 12px;
+                    }
+                }
+            }
+    
+        }
+    }
+    
+}

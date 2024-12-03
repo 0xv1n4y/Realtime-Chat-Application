@@ -1,0 +1,100 @@
+.group-profile-main {
+    @include main-card;
+    .header-container{
+       @include justify-between-align-center-style;
+       padding: 15px;
+       .title{
+        font-size: 20px;
+       }
+       .close-icon{
+        @include close-icon;
+    }
+    }
+    .textfields-main{
+        @include flex-d-column-style;
+        padding: 5px 15px;
+        gap: 10px;
+        .field{
+            @include text-input-style;
+        }
+        .validation-border {
+            @include text-input-style;
+            @include text-input-error-style;
+        }
+    }
+    .tooltip-main{
+       @include tooltip-card;
+       padding: 5px 15px;
+    }
+    .profile-main{
+        @include flex-d-column-style;
+        padding: 5px 15px;
+        overflow-y: auto;
+        gap:10px;
+        .profile{
+          @include profile-card;
+            .user-photo{
+              @include profile-photo;
+            }
+            .details{
+                @include flex-d-column-style;
+                gap:5px;
+                .title{
+                    font-weight: 600;
+                    font-size: 18px;
+                }
+                .message{
+                    font-size: 14px;
+                    font-weight: 400;
+                }
+            }
+        }
+
+    }
+    .group-action-button{
+        background-color: teal;
+        margin:15px;
+        color: white;
+        cursor: pointer;
+        &:hover{
+            background-color: teal;
+        }
+    }
+    
+}
+
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+    .group-profile-main{
+        max-width: 270px;
+        max-height: 400px;
+        .header-container{
+            .title{
+             font-size: 18px;
+            }
+            .close-icon{
+            width:25px
+            }
+         }
+         .profile-main{
+            .profile{
+                .user-photo{
+                    height: 40px;
+                    width: 40px;
+                }
+                .details{
+                    .title{
+                        font-size: 16px;
+                    }
+                    .message{
+                        font-size: 12px;
+                    }
+                }
+            }
+    
+        }
+    }
+   
+   
+    
+}
+  

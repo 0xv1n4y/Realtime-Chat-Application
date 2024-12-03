@@ -1,0 +1,115 @@
+//Flex-box styles
+@mixin flex-d-column-style{
+    display: flex;
+    flex-direction: column;
+}
+@mixin flex-align-center-style{
+display: flex;
+align-items: center;
+}
+@mixin justify-align-center-style{
+display: flex;
+justify-content: center;
+align-items: center;
+}
+@mixin justify-space-between-style{
+display: flex;
+justify-content: space-between;
+}
+@mixin justify-between-align-center-style{
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+@mixin flex-r-gap-style{
+display:flex;
+gap: 1.5rem;
+}
+@mixin flex-d-column-center-style{
+@include flex-d-column-style;
+align-items: center;
+}
+@mixin justify-content-center{
+display : flex;
+justify-content: center;
+}
+@mixin align-items-center{
+display : flex;
+align-items : center;
+}
+@mixin title-style{
+  font-size: 30px;
+  font-weight: 600;
+  color:rgba(87, 57, 197, 0.87);
+}
+@mixin primary-button-style{
+  background-color: #1f7a8c;
+  font-size: 18px;
+  color: white;
+  font-weight: 500;
+  text-transform: none;
+  cursor: pointer;  
+  &:hover{
+    background-color: #1f7a8c;
+    color: white;
+  }
+}
+@mixin text-input-style {
+  background-color: #ffff;
+  border-radius: 5px !important;
+  .MuiOutlinedInput-notchedOutline {
+    border-radius: 4px !important;
+  }
+}
+@mixin text-input-error-style {
+  .MuiOutlinedInput-notchedOutline {
+      border: 0.5px solid red;
+  }
+}
+@mixin error-label-style{
+  font-size: 14px;
+  font-weight: 500;
+  color: red;
+}
+
+// Profile Card
+
+@mixin main-card {
+  @include flex-d-column-style;
+  width: 400px;
+  max-width: 400px;
+  max-height: 500px;
+}
+
+@mixin close-icon {
+  width:30px;
+  color: black;
+  cursor: pointer;
+}
+
+@mixin tooltip-card {
+  display: flex;
+  gap: 8px;
+  max-width: 400px;
+  flex-wrap: wrap;
+}
+
+@mixin profile-card {
+  @include flex-align-center-style;
+  padding: 10px;
+  gap:20px;
+  background-color: rgb(245, 223, 223);
+  color: rgba(22, 21, 21, 0.76);
+  border-radius: 5px;
+  cursor: pointer;
+  &:hover{
+    background-color: rgb(136, 80, 239);
+    color: white;
+  }
+}
+
+@mixin profile-photo {
+  width: 50px;
+  height: 50px;
+}
+  

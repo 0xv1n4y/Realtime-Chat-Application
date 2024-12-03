@@ -1,0 +1,62 @@
+.menu-drawer-main{
+    padding: 30px 20px;
+    @include flex-d-column-style;
+    gap:40px;
+    .search-box{
+        padding: 2px 4px;
+        width: 300px;
+        @include flex-align-center-style;
+       }
+    .profile-main{
+        @include flex-d-column-style;
+        gap:20px;
+        .profile{
+            @include flex-align-center-style;
+            padding: 10px;
+            gap:20px;
+            background-color: rgb(245, 223, 223);
+            color: rgba(22, 21, 21, 0.76);
+            border-radius: 5px;
+            width: 300px;
+            cursor: pointer;
+            &:hover{
+                background-color: rgb(136, 80, 239);
+                color: white;
+            }
+            .user-photo{
+               width: 60px;
+               height: 60px;
+            }
+            .details{
+                @include flex-d-column-style;
+                gap:5px;
+                .title{
+                    font-weight: 600;
+                    font-size: 18px;
+                }
+                .message{
+                    font-size: 14px;
+                    font-weight: 400;
+                }
+            }
+        }
+
+    }
+}
+
+@media only screen and (min-width:480px) and (max-width:1024px) {
+    .menu-drawer-main{
+        .search-box{
+            width:250px;
+        } 
+        .profile-main{
+            .profile{
+                width: 250px;
+                .user-photo{
+                    width:50px;
+                    height: 50px;
+                }
+            }
+        } 
+    }
+}

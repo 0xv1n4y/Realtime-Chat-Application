@@ -1,0 +1,46 @@
+.messages-container{
+    padding: 1rem;
+    .messages-main{
+        display: flex;
+        margin-bottom: 1rem;
+        .message-box{
+            display:flex;
+            align-items: center;
+            gap:10px;
+            padding: 0.5rem 1rem;
+            max-width: 70%;
+            .messsage{
+                display: flex;
+                flex-direction: column;
+                gap:5px;
+                padding: 10px 15px;
+                border-radius: 18px;
+                .user-name{
+                    font-size: 17px;
+                    font-weight: 500;
+                    letter-spacing: 1px;
+                }
+                .text{
+                    font-size: 14px;
+                }
+
+            }
+        }
+    }
+
+    @media only screen and (min-width: 320px) and (max-width: 480px) {
+        .messages-main{
+            .message-box{
+                .messsage{
+                    .user-name{
+                        font-size: 15px
+                    }
+                    .text{
+                        font-size: 12px;
+                    }
+                }
+            }
+        }
+    }
+}
+

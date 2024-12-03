@@ -1,0 +1,62 @@
+.user-profile{
+    min-height: 160px;
+    width: 400px;
+    max-width: 400px;
+    padding: 15px;
+    @include flex-d-column-style;
+    .close-icon{
+        align-self: flex-end;
+        width:25px;
+        color: black;
+    }
+    .details-main{
+        display: flex;
+        align-items: center;
+        gap:20px;
+        img {
+            width: 70px; 
+            height: 70px;
+            border-radius: 50%;
+            object-fit: cover; 
+            border: 2px solid #7b6dd5; 
+          }
+        .details{
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            .title{
+                font-size: 20px;
+                font-weight: 600;
+            }
+            .email{
+                font-size: 16px;
+                color: #484751;
+            }
+        }
+          
+    }
+}
+
+//MediaQueries
+
+@media only screen and (min-width: 321px) and (max-width:480px) {
+    .user-profile{
+        max-width: 300px;
+        .details-main{
+            img {
+                width: 60px; 
+                height: 60px;
+                
+              }
+            .details{
+                .title{
+                    font-size: 18px;
+                }
+                .email{
+                    font-size: 14px;
+                }
+            }
+              
+        }
+    }
+}

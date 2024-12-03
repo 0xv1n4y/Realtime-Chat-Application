@@ -1,0 +1,63 @@
+.login-main{
+    min-width: 350px;
+    min-height: 400px;
+    padding: 20px;
+    background-color: #f8f8ff;
+    border-radius: 5px;
+    @include flex-d-column-style;
+    gap:40px;
+    .title{
+        @include title-style;
+    }
+    .fields{
+        @include flex-d-column-style;
+        gap:20px;
+        .field{
+            @include text-input-style;
+        }
+        .validation-border {
+            @include text-input-style;
+            @include text-input-error-style;
+        }
+        .validation-error-box{
+            @include flex-d-column-style;
+            width: 300px;
+            gap:1px;
+            .validtion-error{
+              text-align: center;
+              @include error-label-style;
+            }
+          }
+    }
+    .action-button{
+        @include primary-button-style;
+    }
+    .desc{
+        align-self: center;
+        color: gray;
+        .link{
+            cursor: pointer;
+         }
+    }
+    @media (max-width: 900px) and (min-width: 600px) {
+        max-width: 400px;
+        align-self: center;
+        
+    }
+    @media (max-width: 600px) {
+        max-width: 400px;
+        align-self: center;
+        
+    }
+   // For extra-small mobile devices (below 400px)
+  @media (max-width: 400px) {
+    min-width: 100px;
+    gap:20px;
+    .title{
+        font-size: 25px;
+    }
+    .fields{
+        gap:10px;
+    }
+  }
+}
